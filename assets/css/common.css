@@ -2911,6 +2911,100 @@
 }
 
 /* Career End */
+
+/* Placement Start */
+
+.placement-section {
+    padding: 80px 0;
+    background: #FFF;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+
+/* Section Header */
+
+.section-header {
+    text-align: center;
+}
+
+.section-header p {
+    max-width: 750px;
+    margin: auto;
+    font-size: 16px;
+}
+
+
+/* Programs Grid */
+.programs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    margin-bottom: 70px;
+}
+
+.program-card {
+    padding: 30px;
+    text-align: center;
+    border-radius: 12px;
+    transition: 0.3s ease;
+    color: #FFF;
+    border: 1px solid #A20733;
+}
+
+.program-card:hover {
+    transform: translateY(-8px);
+}
+
+.icon-box {
+    font-size: 35px;
+    margin-bottom: 15px;
+    color: #A20733;
+}
+
+.program-card h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #000;
+}
+
+/* Objectives */
+.objectives h3 {
+    text-align: center;
+    font-size: 28px;
+    color: #1a2155;
+    margin-bottom: 40px;
+}
+
+.objective-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.objective-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    background: #f8f8f8;
+    padding: 20px;
+    border-left: 5px solid #A20733;
+    border-radius: 8px;
+}
+
+.objective-item span {
+    font-size: 22px;
+    font-weight: bold;
+    color: #1a2155;
+    min-width: 40px;
+}
+
+.objective-item p {
+    margin: 0;
+    color: #000;
+}
+
+
+/* Placement End */
 /* RESPONSIVE */
 
 
