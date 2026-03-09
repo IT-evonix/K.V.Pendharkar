@@ -2,7 +2,7 @@
 
 .medium-header {
     margin-bottom: 8px;
-    font-weight: 700;
+    font-weight: 600;
     color: #A20733;
     font-size: 25px;
 }
@@ -26,15 +26,9 @@
     transition: all 0.4s ease;
 }
 
-.founder-table tbody tr:hover {
-    /* background: rgba(162, 7, 51, 0.08) !important; */
-    /* transform: scale(1.01); */
-}
-
 .founder-table td {
     padding: 13px;
     border-bottom: 1px solid #ccc;
-    font-size: 16px;
 }
 
 .founder-table tbody tr:last-child td {
@@ -46,16 +40,13 @@
 }
 
 .founder-table td:first-child {
-    /* font-weight: 700;
-    color: #32247b; */
     text-align: center;
 }
 
-
+/* 
 .inner_tab_mainbox {
     .nav-pills {
         gap: 5px;
-        /* justify-content: center; */
         border-bottom: 1px solid #DEDEDE;
         flex-wrap: nowrap;
         overflow-x: auto;
@@ -88,13 +79,221 @@
 .inner_tab_mainbox {
     .nav-pills {}
 
-    /* Hide scrollbar */
     .nav-pills::-webkit-scrollbar {
         display: none;
+    }
+} */
+
+
+.inner_tab_mainbox .tab-scroll-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.inner_tab_mainbox .nav-pills {
+    gap: 5px;
+    border-bottom: 1px solid #DEDEDE;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    justify-content: flex-start;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+}
+
+.inner_tab_mainbox .nav-pills::-webkit-scrollbar {
+    display: none;
+}
+
+/* Tab buttons */
+.inner_tab_mainbox .nav-pills .nav-link {
+    background: #F5F5F5;
+    border: 0;
+    color: var(--color-black);
+    border-radius: 5px 5px 0px 0px;
+    padding: 10px 15px;
+    font-size: 16px;
+    width: 230px;
+    white-space: nowrap;
+}
+
+.inner_tab_mainbox .nav-pills .nav-link.active {
+    color: #fff;
+    background-color: #A20733;
+}
+
+/* Arrows */
+/* Arrow Base */
+.tab-arrow {
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 2;
+    cursor: pointer;
+    transition: 0.3s;
+    background: #F5F5F5;
+    color: #A20733;
+}
+
+.tab-arrow.active {
+    background: #A20733;
+    color: #fff;
+}
+
+.tab-arrow.disabled {
+    background: #F5F5F5;
+    color: #999;
+    cursor: not-allowed;
+}
+
+.tab-arrow.left {
+    left: -15px;
+    top: 4px;
+}
+
+.tab-arrow.right {
+    right: -15px;
+    top: 4px;
+}
+
+/* Common Banner css start */
+
+.main-banner-box {
+    padding: 120px 0 40px 0;
+    text-align: center;
+    background: hsl(343, 92%, 33%);
+    overflow: hidden;
+    color: #fff;
+}
+
+.main-banner-box .sub-main-banner {
+    position: relative;
+}
+
+
+.main-banner-box .animated-bg span {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
+    animation: float 10s infinite ease-in-out;
+}
+
+
+.main-banner-box .animated-bg span:nth-child(1) {
+    top: -50px;
+    left: -50px;
+    animation-delay: 0s;
+}
+
+
+.main-banner-box .animated-bg span:nth-child(2) {
+    bottom: -80px;
+    right: 10%;
+    animation-delay: 3s;
+}
+
+
+.main-banner-box .animated-bg span:nth-child(3) {
+    top: 30%;
+    right: -60px;
+    animation-delay: 6s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-30px);
     }
 }
 
 
+.main-banner-box .inner_heading {
+    color: #ffffff;
+    margin-bottom: 10px;
+    font-size: 35px;
+}
+
+/* Breadcrumb */
+.banner-breadcrumb {
+    margin-top: 8px;
+}
+
+.banner-breadcrumb .breadcrumb {
+    background: transparent;
+    margin-bottom: 0;
+}
+
+.banner-breadcrumb .breadcrumb-item a {
+    color: #ffec02;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.banner-breadcrumb .breadcrumb-item.active {
+    color: #ffffff;
+    opacity: 1;
+    font-size: 12px;
+    padding: 3px 5px;
+}
+
+.banner-breadcrumb .breadcrumb-item+.breadcrumb-item::before {
+    /* color: rgba(255, 255, 255, 0.7); */
+    color: #ffec02;
+}
+
+/* Button */
+.common-btn {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    color: #1a2155;
+    border: 1px solid #1a2155;
+    padding: 5px 10px;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: color 0.35s ease, border-color 0.35s ease;
+    background: transparent;
+}
+
+/* hover background */
+.common-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: #A20733;
+    transition: width 0.4s ease;
+    z-index: -1;
+}
+
+.common-btn:hover::before {
+    width: 100%;
+}
+
+.common-btn:hover {
+    color: #fff !important;
+    border-color: #A20733;
+}
+
+.section-title {
+    font-size: 32px;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 20px;
+}
 
 /* Common Css End */
 
@@ -149,11 +348,11 @@
 
 
 .chairman-modern .chairman-glass {
-    /* background: rgba(255,255,255,0.85); */
     backdrop-filter: blur(12px);
     border-radius: 20px;
-    /* box-shadow: 0 20px 45px rgba(0,0,0,0.2); */
     position: relative;
+    max-height: 430px;
+    overflow-y: auto;
 }
 
 
@@ -180,36 +379,27 @@
 }
 
 
-.chairman-modern .chairman-glass p {
-    margin-bottom: 14px;
-    font-size: 16px;
-}
-
-
 .chairman-modern .signature-box h5 {
     margin: 0;
     font-weight: 700;
     color: #A20733;
 }
 
-.chairman-modern .signature-box span {
-    font-size: 14px;
-    color: #000;
-    opacity: 0.7;
-}
-
 
 .chairman-modern .chairman-profile {
     max-width: 360px;
     margin: auto;
+    position: sticky;
+    top: 0px;
+    z-index: 2;
 }
+
+
 
 .chairman-modern .image-frame {
     position: relative;
     padding: 10px;
-    /* background: linear-gradient(145deg, #A20733, #7c0527); */
     border-radius: 28px;
-    /* box-shadow: 0 10px 20px rgba(106, 105, 105, 0.2); */
     box-shadow: 0px 3px 6px #ccc;
 }
 
@@ -222,7 +412,6 @@
     background: #fff;
     border-radius: 18px;
     padding: 18px 20px;
-    /* box-shadow: 0 10px 10px rgba(106, 105, 105, 0.2); */
     box-shadow: 0px 3px 6px #ccc;
 }
 
@@ -246,8 +435,6 @@
     margin-top: 4px;
     font-size: 13px;
     color: #000;
-    /* opacity: 0.65; */
-
 }
 
 
@@ -262,7 +449,6 @@
 
 .chairman-modern .image-frame:hover {
     transform: translateY(-8px);
-    /* box-shadow: 0 28px 55px rgba(0,0,0,0.2); */
     box-shadow: 0px 3px 6px #ccc;
 }
 
@@ -370,116 +556,19 @@
 }
 
 
-/* Common Banner css start */
-
-.main-banner-box {
-    padding: 40px 0 40px 0;
-    text-align: center;
-    background: hsl(343, 92%, 33%);
-    overflow: hidden;
-    color: #fff;
-}
-
-.main-banner-box .sub-main-banner {
-    position: relative;
-}
-
-
-.main-banner-box .animated-bg span {
-    position: absolute;
-    width: 200px;
-    height: 200px;
-    background: rgba(255, 255, 255, 0.08);
-    border-radius: 50%;
-    animation: float 10s infinite ease-in-out;
-}
-
-
-.main-banner-box .animated-bg span:nth-child(1) {
-    top: -50px;
-    left: -50px;
-    animation-delay: 0s;
-}
-
-
-.main-banner-box .animated-bg span:nth-child(2) {
-    bottom: -80px;
-    right: 10%;
-    animation-delay: 3s;
-}
-
-
-.main-banner-box .animated-bg span:nth-child(3) {
-    top: 30%;
-    right: -60px;
-    animation-delay: 6s;
-}
-
-@keyframes float {
-    0%, 100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-30px);
-    }
-}
-
-
-.main-banner-box .inner_heading {
-    color: #ffffff;
-    margin-bottom: 10px;
-    font-size: 35px;
-}
-
-/* Breadcrumb */
-.banner-breadcrumb {
-    margin-top: 8px;
-}
-
-.banner-breadcrumb .breadcrumb {
-    background: transparent;
-    margin-bottom: 0;
-}
-
-.banner-breadcrumb .breadcrumb-item a {
-    color: #ffec02;
-    text-decoration: none;
-    font-size: 12px;
-}
-
-.banner-breadcrumb .breadcrumb-item.active {
-    color: #ffffff;
-    opacity: 1;
-    font-size: 12px;
-    padding: 3px 5px;
-}
-
-.banner-breadcrumb .breadcrumb-item+.breadcrumb-item::before {
-    /* color: rgba(255, 255, 255, 0.7); */
-    color: #ffec02;
-}
-
-
 /* Vision & Mission css start */
 
-.vm-image-section {
-    /* background: linear-gradient(
-        180deg,
-        rgba(162, 7, 51, 0.05),
-        rgba(162, 7, 51, 0.02),
-        #fff
-    ); */
-    /* padding: 60px 0; */
-}
+.vm-image-section {}
 
 
-.vision-mission-img {
+
+.vm-image-section .vision-mission-img {
     width: 100%;
     height: 100%;
 }
 
-.vm-image-box img {
+
+.vm-image-section .vm-image-box img {
     width: 100%;
     transition: transform 0.6s ease, filter 0.6s ease;
     filter: brightness(1.05);
@@ -488,17 +577,17 @@
 }
 
 /* Image hover */
-.vm-image-box:hover {
+.vm-image-section .vm-image-box:hover {
     transform: translateY(-10px);
 }
 
-.vm-image-box:hover img {
+.vm-image-section .vm-image-box:hover img {
     transform: scale(1.05);
     filter: brightness(1.05);
 }
 
 /* Glass card */
-.vm-glass-card {
+.vm-image-section .vm-glass-card {
     background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(14px);
     padding: 30px;
@@ -507,7 +596,7 @@
 }
 
 /* Badge */
-.vm-badge {
+.vm-image-section .vm-badge {
     display: inline-block;
     padding: 7px 18px;
     background: #A20733;
@@ -519,28 +608,20 @@
 }
 
 /* Heading */
-.vm-glass-card h3 {
+.vm-image-section .vm-glass-card h3 {
     font-size: 28px;
     font-weight: 800;
     color: #000;
     margin-bottom: 16px;
 }
 
-/* Text */
-.vm-glass-card p {
-    font-size: 16px;
-    /* line-height: 1.8; */
-    margin: 0;
-}
-
-
-.obj-icon {
+.vm-image-section .obj-icon {
     font-size: 32px;
     display: inline-block;
     /* margin-bottom: 15px; */
 }
 
-.icon-img {
+.infra-section .icon-img {
     width: 71px;
     object-fit: cover;
     margin-bottom: 5px;
@@ -586,14 +667,14 @@
 }
 
 /* Header */
-.modern-title {
+.goals-modern .modern-title {
     font-size: 36px;
     font-weight: 800;
     /* color: #000; */
     color: #A20733;
 }
 
-.goal-card {
+.goals-modern .goal-card {
     position: relative;
     background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(14px);
@@ -606,14 +687,14 @@
     overflow: hidden;
 }
 
-.goal-card {
+.goals-modern .goal-card {
     position: relative;
     overflow: hidden;
     background: #fff;
     transition: color 0.4s ease;
 }
 
-.goal-card::before {
+.goals-modern .goal-card::before {
     content: "";
     position: absolute;
     top: 0;
@@ -627,16 +708,16 @@
     z-index: 0;
 }
 
-.goal-card:hover::before {
+.goals-modern .goal-card:hover::before {
     transform: scale(1);
 }
 
-.goal-card * {
+.goals-modern .goal-card * {
     position: relative;
     z-index: 1;
 }
 
-.goal-card .goal-icon-img {
+.goals-modern .goal-card .goal-icon-img {
     width: 50px;
     object-fit: cover;
     margin-bottom: 5px;
@@ -644,15 +725,15 @@
 
 
 /* Optional: text/icon color change on hover */
-.goal-card:hover p,
-.goal-card:hover .goal-icon-img {
+.goals-modern .goal-card:hover p,
+.goals-modern .goal-card:hover .goal-icon-img {
     color: #fff;
     filter: brightness(0) invert(1);
 }
 
 
 /* Icon */
-.goal-icon {
+.goals-modern .goal-icon {
     width: 58px;
     height: 58px;
     background: rgba(162, 7, 51, 0.1);
@@ -695,143 +776,63 @@
 
 /* IMAGE GRID */
 
-.text-holder-main {
-    background: #fff;
-    padding: 40px;
-    border-radius: 15px;
-    /* font-size: 16px; */
-    /* line-height: 1.7; */
-}
-
 .about-history-main {
     padding: 30px 0;
 }
 
-.history-img {
+.about-history-main .text-holder-main {
+    background: #fff;
+    padding: 40px;
+    border-radius: 15px;
+}
+
+.about-history-main .history-img {
     border-radius: 16px;
     overflow: hidden;
     box-shadow: 0 6px 9px rgba(0, 0, 0, 0.15);
     transition: transform 0.4s ease;
 }
 
-.history-img img {
+.about-history-main .history-img img {
     width: 100%;
     height: auto;
     display: block;
 }
 
-.history-img:hover {
+.about-history-main .history-img:hover {
     transform: translateY(-8px);
 }
 
 
 /* About history 1 css start */
 
-.college-img {
+.college-history-section .college-img {
     width: 100%;
     object-fit: contain;
     height: 300px;
 }
 
-.college-history-section {
-    padding: 40px 0;
-    /* background: #ffffff; */
-}
-
-.section-title {
-    font-size: 34px;
-    font-weight: 700;
-    color: #000;
-    margin-bottom: 20px;
-}
-
-.section-text {
-    font-size: 16px;
-}
-
-
-.college-img-modern {
+.college-history-section .college-img-modern {
     border-radius: 16px;
-    box-shadow: 0 9px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
     transition: transform 0.4s ease;
     height: 380px;
     background-size: cover;
 }
 
-.college-img-modern:hover {
+.college-history-section .college-img-modern:hover {
     transform: scale(1.03);
 }
 
-.info-card {
+.college-history-section .info-card {
     background: #fff;
     padding: 40px;
     border-radius: 15px;
-    /* box-shadow: 0 6px 9px rgba(0, 0, 0, 0.08); */
     font-size: 16px;
 }
 
 
-
-
-
 /* About history 1 css end */
-
-/* FOunder member */
-
-.founder-card-section {
-    padding: 60px 0;
-    /* background: #f8f8f8; */
-}
-
-.founder-card {
-    position: relative;
-    background: #fff;
-    border-radius: 22px;
-    padding: 20px 25px 0px 25px;
-    height: 100%;
-    box-shadow: 0 6px 9px rgba(0, 0, 0, 0.12);
-    transition: all 0.5s ease;
-    border: 2px solid transparent;
-}
-
-.founder-card:hover {
-    transform: translateY(-12px);
-    border-color: #A20733;
-    box-shadow: 0 6px 9px rgba(0, 0, 0, 0.2);
-}
-
-.sr-no {
-    position: absolute;
-    top: -15px;
-    right: 20px;
-    background: linear-gradient(135deg, #A20733, #32247b);
-    color: #fff;
-    font-weight: 700;
-    padding: 8px 14px;
-    border-radius: 20px;
-    font-size: 14px;
-}
-
-.founder-card h5 {
-    color: #000;
-    font-weight: 500;
-    margin-bottom: 10px;
-    font-size: 18px;
-}
-
-.designation {
-    color: #A20733;
-    font-weight: 600;
-    margin-bottom: 5px;
-}
-
-.occupation {
-    color: #32247b;
-    font-weight: 500;
-    font-size: 15px;
-}
-
-/* FOunder member end */
 
 /* Gallery CSS Start */
 
@@ -872,8 +873,6 @@
 .gallery-item:hover::after {
     opacity: 1;
 }
-
-
 
 /* Gallery CSS End */
 
@@ -963,18 +962,6 @@
 }
 
 
-
-/* .board-studies-section .department-list a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -3px;
-    width: 0px;
-    height: 2px;
-    background: #1a2155;
-    transition: 0.3s;
-} */
-
 .board-studies-section .department-list a:hover::after {
     width: 100%;
 }
@@ -1020,19 +1007,6 @@
     align-items: center;
     gap: 6px;
 }
-
-/* .board-studies-section .department-list a::after {
-    content: "→";
-    opacity: 0;
-    transform: translateX(-6px);
-    transition: 0.3s ease;
-}
-
-.board-studies-section .department-list li:hover a::after {
-    opacity: 1;
-    transform: translateX(0);
-} */
-
 
 
 /* Board Of studies End */
@@ -1181,7 +1155,6 @@
 /* Text */
 .gc-modern-section .gc-modern-card p {
     font-size: 16px;
-    color: #000;
     margin-bottom: 18px;
 }
 
@@ -1219,6 +1192,53 @@
 
 /* Academic */
 
+.programme-section {
+    background: #f8f9fc;
+    padding: 60px 20px;
+}
+
+.programme-card {
+    background: #fff;
+    padding: 40px;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    box-shadow: 0 6px 9px rgba(0, 0, 0, 0.08);
+}
+
+.programme-main-title {
+    color: #1a2155;
+    padding: 5px 15px;
+    display: inline-block;
+    border-left: 5px solid #A20733;
+    text-align: center;
+}
+
+.programme-card h3 {
+    color: #A20733;
+    margin-top: 30px;
+    font-size: 22px;
+}
+
+.programme-card h4 {
+    color: #1a2155;
+    margin-bottom: 10px;
+}
+
+
+.semester-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.semester-box {
+    background: #f4f6ff;
+    padding: 20px;
+    border-radius: 8px;
+    border-top: 4px solid #A20733;
+}
+
 /* Certificate cource css start */
 
 
@@ -1232,6 +1252,7 @@
     background: #FFF;
     border-radius: 10px;
     margin-bottom: 30px;
+    height: 280px;
 }
 
 /* Header */
@@ -1244,7 +1265,7 @@
 
 .course-header i {
     font-size: 28px;
-    color: #A20733;
+    color: #1a2155;
     transition: transform 0.4s ease;
 }
 
@@ -1257,7 +1278,6 @@
 
 .course-header h3 span {
     font-weight: 600;
-    color: #000;
     font-size: 20px;
 }
 
@@ -1273,7 +1293,6 @@
     gap: 12px;
     align-items: flex-start;
     font-size: 15px;
-    color: #000;
     margin-bottom: 14px;
     line-height: 1.5;
 }
@@ -1289,46 +1308,6 @@
     font-size: 13px;
     color: #555;
 }
-
-/* Button */
-.common-btn {
-    display: inline-block;
-    text-decoration: none;
-    font-size: 12px;
-    font-weight: 600;
-    color: #1a2155;
-    border: 1px solid #1a2155;
-    padding: 5px 10px;
-    border-radius: 5px;
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-    transition: color 0.35s ease, border-color 0.35s ease;
-    background: transparent;
-}
-
-/* hover background */
-.common-btn::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0%;
-    height: 100%;
-    background-color: #A20733;
-    transition: width 0.4s ease;
-    z-index: -1;
-}
-
-.common-btn:hover::before {
-    width: 100%;
-}
-
-.common-btn:hover {
-    color: #fff !important;
-    border-color: #A20733;
-}
-
 
 /* Hover effects */
 .course-card:hover {
@@ -1352,27 +1331,22 @@
     font-size: 20px;
     font-weight: 600;
     color: #1a2155;
-    /* dark blue for professional look */
     margin-bottom: 10px;
 }
 
 /* Contact Info */
 .contact-text {
     font-size: 18px;
-    color: #000;
-    /* main text */
     line-height: 1.6;
 }
 
 .contact-text i {
     color: #A20733;
-    /* icons in deep red */
     margin-right: 6px;
 }
 
 .contact-text a {
     color: #1a2155;
-    /* link color - dark blue */
     text-decoration: none;
     font-weight: 600;
     transition: color 0.3s;
@@ -1380,17 +1354,12 @@
 
 .contact-text a:hover {
     color: #A20733;
-    /* hover effect in red */
 }
 
 .contact-text span {
-    color: #000;
-    /* separator color */
     margin: 0 6px;
     font-weight: 500;
 }
-
-
 
 /* Certificate cource css end */
 
@@ -1398,7 +1367,7 @@
 
 .jc-info {
     max-width: 1100px;
-    margin: 50px auto;
+    margin: 0px auto;
     padding: 0 20px;
     color: #000;
     line-height: 1.7;
@@ -1440,11 +1409,6 @@
     margin-bottom: 15px;
 }
 
-.jc-block li {
-    margin-bottom: 6px;
-    font-size: 16px;
-}
-
 
 .jc-block ul {
     list-style: none;
@@ -1455,7 +1419,7 @@
 .jc-block li {
     position: relative;
     padding-left: 22px;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
     font-size: 16px;
 }
 
@@ -1487,8 +1451,6 @@
 
 
 /* Comittee CSS start */
-
-/* Grid Layout */
 
 .committee-section {
     padding: 60px 0;
@@ -1540,9 +1502,6 @@
     position: relative;
     z-index: 1;
 }
-
-
-
 
 /* Comittee CSS End */
 
@@ -1599,6 +1558,15 @@
     padding: 14px 0;
     border-bottom: 1px solid #e6e6e6;
     transition: all 0.3s ease;
+    gap: 15px;
+}
+
+.arts-departments .arts-list li span {
+    flex: 1;
+}
+
+.arts-departments .arts-list li a {
+    white-space: nowrap;
 }
 
 .arts-departments .arts-list li:last-child {
@@ -1616,7 +1584,6 @@
     font-size: 13px;
     text-decoration: none;
     color: #1a2155;
-    /* border-bottom: 1px solid transparent; */
     transition: all 0.3s ease;
 }
 
@@ -1640,13 +1607,11 @@
 .slider-track {
     display: flex;
     gap: 16px;
-    /* GAP between slides */
     transition: transform 0.6s ease;
 }
 
 .slider-track img {
     width: calc(33.333% - 11px);
-    /* adjust for gap */
     height: 300px;
     object-fit: cover;
     flex-shrink: 0;
@@ -1660,22 +1625,11 @@
     font-weight: 600;
 }
 
-/* Mobile: single image */
-@media (max-width: 768px) {
-    .slider-track img {
-        width: 100%;
-        height: 260px;
-    }
-}
-
-
 /* Departments CSS end */
 
 
 /* Student Zone Start */
-/* Library  */
 
-/* Section */
 .library-section {
     padding: 30px 10px;
     border-radius: 5px;
@@ -1802,9 +1756,6 @@
 .library-section .area-details {
     list-style: none;
     padding: 0;
-    /* background: #fff; */
-    /* border-radius: 12px; */
-    /* box-shadow: 0 3px 6px rgba(0, 0, 0, .06); */
     overflow: hidden;
 }
 
@@ -1852,19 +1803,12 @@
 
 
 /* Committee */
-.library-section .committee-list {
-    /* background: #fff; */
-    /* padding: 28px; */
-    /* border-radius: 12px; */
-    /* box-shadow: 0 3px 6px rgba(0, 0, 0, .06); */
-}
+.library-section .committee-list {}
 
 .main-grid-library-class {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 2fr));
     gap: 30px;
-    /* margin-top: 30px; */
-    /* padding: 0px 40px; */
 }
 
 
@@ -1878,14 +1822,14 @@
     transition: 0.45s ease;
 }
 
-.library-section .committee-list li {
+.committee-list li {
     margin-bottom: 12px;
     padding-left: 22px;
     position: relative;
     list-style-type: none;
 }
 
-.library-section .committee-list li::before {
+.committee-list li::before {
     content: "➤";
     position: absolute;
     left: 0;
@@ -1973,10 +1917,6 @@
 
 .library-section .activity-card:hover h4 {
     color: #FFF;
-}
-
-.library-section .activity-card p {
-    font-size: 14px;
 }
 
 
@@ -2104,10 +2044,7 @@
 
 /* Railway Concession */
 
-.railway-attractive-section {
-    /* padding:70px 0;
-    background:#fff; */
-}
+.railway-attractive-section {}
 
 .railway-attractive-section .railway-content {
     max-width: 950px;
@@ -2155,11 +2092,6 @@
     color: #A20733;
     min-width: 32px;
 }
-
-.railway-attractive-section .railway-rule-box p {
-    font-size: 15px;
-}
-
 
 
 /* Existing styles remain same */
@@ -2317,7 +2249,6 @@
 .concession-note p {
     margin: 0;
     font-size: 15px;
-    color: #000;
 }
 
 .concession-note strong {
@@ -2336,8 +2267,6 @@
     padding: 20px 0;
 }
 
-
-
 /* Student Zone End */
 
 
@@ -2348,7 +2277,6 @@
     padding: 60px 20px;
     max-width: 1100px;
     margin: auto;
-    font-family: "Segoe UI", Arial, sans-serif;
     color: #000;
 }
 
@@ -2432,6 +2360,10 @@
 .documents-stepper {
     padding: 0 0 40px 0;
     color: #000;
+}
+
+.documents-stepper:last-child {
+    padding: 0 0 0 0;
 }
 
 
@@ -2554,10 +2486,7 @@
 
 
 .results-ui {
-    /* max-width: 1000px; */
     margin: auto;
-    /* display: grid;
-    gap: 30px; */
 }
 
 .result-card {
@@ -2755,7 +2684,6 @@
 
 .section-header p {
     font-size: 14px;
-    color: #000;
     margin-bottom: 45px;
 }
 
@@ -2781,7 +2709,6 @@
 
 .iqac-card p {
     font-size: 16px;
-    color: #000;
     margin-bottom: 0;
 }
 
@@ -2846,23 +2773,13 @@
     border-bottom: 1px solid #ccc;
 }
 
-
-
-/*NAAC & IQAC start */
-
-
-/* NAAC & IQAC End */
-
-
-/* Career start */
 .career-section {
     padding: 60px;
     text-align: center;
     color: #fff;
 }
 
-/* Content Box */
-.career-section  .career-box {
+.career-section .career-box {
     background: #fff;
     max-width: 700px;
     margin: auto;
@@ -2871,16 +2788,13 @@
     box-shadow: 0 6px 9px rgba(0, 0, 0, 0.2);
 }
 
-/* Heading */
 .career-box h2 {
     color: #1a2155;
     margin-bottom: 20px;
     font-size: 32px;
 }
 
-/* Paragraph */
 .career-box p {
-    color: #000;
     font-size: 16px;
 }
 
@@ -2907,7 +2821,7 @@
 
 .apply-btn:hover {
     color: #FFF !important;
-    
+
 }
 
 /* Career End */
@@ -2915,34 +2829,30 @@
 /* Placement Start */
 
 .placement-section {
-    padding: 80px 0;
+    padding: 60px 0;
     background: #FFF;
-    font-family: 'Segoe UI', sans-serif;
 }
 
 
-/* Section Header */
-
-.section-header {
+.placement-section .section-header {
     text-align: center;
 }
 
-.section-header p {
+.placement-section .section-header p {
     max-width: 750px;
     margin: auto;
-    font-size: 16px;
 }
 
 
 /* Programs Grid */
-.programs-grid {
+.placement-section .programs-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 30px;
     margin-bottom: 70px;
 }
 
-.program-card {
+.placement-section .program-card {
     padding: 30px;
     text-align: center;
     border-radius: 12px;
@@ -2951,37 +2861,37 @@
     border: 1px solid #A20733;
 }
 
-.program-card:hover {
+.placement-section .program-card:hover {
     transform: translateY(-8px);
 }
 
-.icon-box {
+.placement-section .icon-box {
     font-size: 35px;
     margin-bottom: 15px;
-    color: #A20733;
+    background: #A20733;
 }
 
-.program-card h4 {
+.placement-section .program-card h4 {
     font-size: 18px;
     font-weight: 600;
     color: #000;
 }
 
 /* Objectives */
-.objectives h3 {
+.placement-section .objectives h3 {
     text-align: center;
     font-size: 28px;
     color: #1a2155;
     margin-bottom: 40px;
 }
 
-.objective-list {
+.placement-section .objective-list {
     display: flex;
     flex-direction: column;
     gap: 25px;
 }
 
-.objective-item {
+.placement-section .objective-item {
     display: flex;
     align-items: flex-start;
     gap: 20px;
@@ -2991,30 +2901,872 @@
     border-radius: 8px;
 }
 
-.objective-item span {
+.placement-section .objective-item span {
     font-size: 22px;
     font-weight: bold;
     color: #1a2155;
     min-width: 40px;
 }
 
-.objective-item p {
+.placement-section .objective-item p {
     margin: 0;
     color: #000;
 }
 
-
 /* Placement End */
-/* RESPONSIVE */
+
+/* Admission page start */
+
+.news-section {
+    padding: 60px 20px;
+}
+
+.table-news-title {
+    font-size: 20px;
+    margin-bottom: 30px;
+    color: #1a2155;
+    font-weight: 600;
+    text-align: center;
+}
+
+.news-title {
+    text-align: center;
+    color: #1a2155;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.news-title::after {
+    content: "";
+    width: 80px;
+    height: 3px;
+    background-color: #A20733;
+    display: block;
+    margin: 10px auto 0;
+}
+
+.notice-box {
+    background-color: #fff;
+    color: #000;
+    padding: 25px;
+    border-left: 6px solid #A20733;
+    border-radius: 8px;
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    transition: 0.3s ease;
+}
+
+.notice-box:hover {
+    transform: translateY(-5px);
+}
+
+.notice-box p {
+    font-size: 18px;
+    margin: 0;
+    font-weight: 500;
+    text-align: center;
+}
+
+/* Admission page end */
+
+/* Homepage inner page start */
+
+.campus-section {
+    padding: 60px 0;
+    background: #FFF;
+}
+
+.section-title h2 {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    color: #1a2155;
+    margin-bottom: 40px;
+}
+
+.campus-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.campus-card {
+    background: #FFF;
+    border: 1px solid #eee;
+    padding: 30px 20px;
+    text-align: center;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.campus-card:hover {
+    transform: translateY(-5px);
+}
+
+.icon-box {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 20px;
+    background: #A20733;
+    color: #FFF;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    transition: all 0.3s ease;
+}
+
+.campus-card h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #000;
+    margin: 0;
+    transition: all 0.3s ease;
+}
 
 
-@media (max-width: 768px) {
-    .chairman-modern {
-        padding: 40px 0px;
+.research-modern {
+    padding: 70px 0;
+    background: #f4f6fb;
+}
+
+.research-header {
+    text-align: center;
+    max-width: 850px;
+    margin: auto;
+    margin-bottom: 50px;
+}
+
+.research-header p {
+    font-size: 16px;
+}
+
+.research-card {
+    background: #FFF;
+    padding: 35px;
+    border-radius: 12px;
+    margin-bottom: 40px;
+    box-shadow: 03px 6px rgba(0, 0, 0, 0.05);
+}
+
+.research-card h3 {
+    color: #A20733;
+    font-size: 20px;
+}
+
+.committee-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.member-card {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.member-card:hover h4 {
+    color: #FFF;
+}
+
+.member-card:hover {
+    background: #A20733;
+    color: #FFF;
+    transform: translateY(-5px);
+}
+
+.chairperson {
+    border: 1px solid #1a2155;
+}
+
+
+.ipr-section {
+    padding: 60px 0;
+    background: #f5f7fb;
+}
+
+.ipr-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+.ipr-card h3 {
+    color: #A20733;
+    margin-bottom: 20px;
+}
+
+.ipr-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+}
+
+.ipr-badge {
+    background: #1a2155;
+    color: #fff;
+    padding: 12px 15px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 14px;
+}
+
+
+
+.patent-card {
+    background: #f9f9f9;
+    padding: 20px;
+    border-left: 4px solid #A20733;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+
+.career-fest-section {
+    padding: 60px 0;
+}
+
+.fest-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+.fest-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+    border-top: 4px solid #A20733;
+}
+
+.fest-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.career-fest-section .student-imgg {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.ncc-section {
+    padding: 60px 0;
+}
+
+.section-title h2 {
+    text-align: center;
+    color: #1a2155;
+    font-size: 32px;
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
+.ncc-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+    border-left: 5px solid #A20733;
+}
+
+
+.sub-heading {
+    color: #1a2155;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+
+.ncc-ordered {
+    padding-left: 20px;
+}
+
+.ncc-ordered li {
+    margin-bottom: 6px;
+}
+
+.ncc-activity-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 12px;
+}
+
+.ncc-activity-grid div {
+    background: #1a2155;
+    color: #fff;
+    padding: 10px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: 0.3s ease;
+}
+
+.ncc-activity-grid div:hover {
+    background: #A20733;
+}
+
+
+.nss-report {
+    margin: 40px auto;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+.nss-report h2 {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #b30000;
+    border-bottom: 3px solid #b30000;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.nss-report h3 {
+    font-size: 22px;
+    font-weight: 600;
+    margin: 30px 0 20px;
+    color: #222;
+    border-left: 5px solid #A20733;
+    padding-left: 10px;
+}
+
+.activity {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 18px 20px;
+    margin-bottom: 18px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: 0.3s ease;
+    border-left: 4px solid #A20733;
+}
+
+.activity:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+}
+
+.activity h4 {
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: #A20733;
+    font-weight: 600;
+}
+
+
+.click-here-btn-class {
+    color: #A20733;
+}
+
+
+/* News & events Section */
+
+.news-card {
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 20px 5px;
+}
+
+.main-class-news-img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    height: 170px;
+    object-fit: cover;
+}
+
+.news-card h3 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.news-card a {
+    color: #CB2E33;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+
+/* RESPONSIVE Media Query*/
+
+@media (max-width:1200px) {
+    .chairman-modern .chairman-glass p {
+        font-size: 15px;
     }
 
-    .main-banner-box {
-        padding: 20px 0 20px 0;
+    .goal-card p {
+        font-size: 13px;
+    }
+
+    .goals-modern .modern-title {
+        font-size: 30px;
+    }
+
+    .medium-header {
+        font-size: 21px;
+    }
+
+    .section-title {
+        font-size: 24px;
+    }
+
+    .founder-table td {
+        font-size: 12px;
+    }
+
+    .founder-table thead th {
+        font-size: 12px;
+    }
+
+    .main-banner-box .inner_heading {
+        font-size: 30px;
+    }
+
+    .arts-departments .arts-title {
+        font-size: 18px;
+    }
+
+    .arts-departments .arts-list li span {
+        font-size: 14px;
+    }
+
+    .news-title {
+        font-size: 27px;
+    }
+
+    .news-title::after {
+        width: 70px;
+        height: 3px;
+    }
+
+    .notice-box p {
+        font-size: 15px;
+    }
+
+    .table-news-title {
+        font-size: 17px;
+    }
+
+    .eligibility-wrap .eligibility-title {
+        font-size: 25px;
+    }
+
+    .eligibility-wrap .eligibility-list {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+    .eligibility-wrap .eligibility-item p {
+        font-size: 14px;
+    }
+
+    .eligibility-wrap .eligibility-note {
+        font-size: 14px;
+    }
+
+    .eligibility-wrap .eligibility-item h4 {
+        font-size: 15px;
+    }
+
+    .footer-widget li {
+        font-size: 14px;
+    }
+
+    .ftitle {
+        font-size: 20px;
+    }
+
+    .library-section .library-quote {
+        font-size: 16px;
+    }
+
+    .inner_tab_mainbox .nav-pills .nav-link {
+        font-size: 14px;
+    }
+
+    .library-section .stat-box h3 {
+        font-size: 22px;
+    }
+
+    .library-section .section-title {
+        font-size: 20px;
+    }
+
+    .library-section .area-details {
+        font-size: 14px;
+    }
+
+    .library-section .committee-list {
+        font-size: 14px;
+    }
+
+    .library-section .library-stats {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .aqar-year {
+        font-size: 14px;
+    }
+
+    .board-studies-section .section-title {
+        font-size: 24px;
+    }
+
+    .board-studies-section .department-list li span {
+        font-size: 14px;
+    }
+
+    .infra-section .infra-main-div p {
+        font-size: 13px;
+    }
+}
+
+
+@media(max-width:991.98px) {
+    .chairman-modern {
+        padding: 45px 0px;
+    }
+
+    .main-banner-box .inner_heading {
+        font-size: 25px;
+    }
+
+    .main-banner-box .animated-bg span {
+        width: 120px;
+        height: 120px;
+    }
+
+    .banner-breadcrumb .breadcrumb-item {
+        font-size: 11px;
+    }
+
+    .banner-breadcrumb .breadcrumb-item.active {
+        font-size: 11px;
+    }
+
+    .chairman-modern .profile-info h5 {
+        font-size: 20px;
+    }
+
+    .chairman-modern .chairman-txtt {
+        font-size: 14px;
+    }
+
+    .chairman-modern .chairman-glass p {
+        font-size: 14px;
+    }
+
+    .chairman-modern .profile-info {
+        padding: 12px;
+    }
+
+    .vm-glass-card {
+        padding: 28px;
+    }
+
+    .vm-glass-card h3 {
+        font-size: 22px;
+    }
+
+    .timeline {
+        padding-left: 30px;
+    }
+
+    .timeline-count {
+        left: -31px;
+    }
+
+    .timeline-item p {
+        font-size: 14px;
+    }
+
+    .medium-header {
+        font-size: 20px;
+    }
+
+    .vm-image-box img {
+        height: 346px;
+    }
+
+    .goal-card p {
+        font-size: 12px;
+    }
+
+    .goal-card .goal-icon-img {
+        width: 45px;
+    }
+
+    .chairman-modern .shape-1 {
+        width: 200px;
+        height: 200px;
+    }
+
+    .section-title {
+        font-size: 20px;
+    }
+
+    .college-img-modern {
+        height: auto;
+        margin-bottom: 30px;
+    }
+
+    .text-holder-main {
+        padding: 30px;
+    }
+
+    .about-history-main {
+        padding: 20px 0;
+    }
+
+    .info-card {
+        padding: 20px;
+    }
+
+    .college-history-section {
+        padding: 20px 0;
+    }
+
+    .goals-modern .modern-title {
+        font-size: 28px;
+    }
+
+    .founder-table td {
+        padding: 11px;
+        font-size: 12px;
+    }
+
+    .founder-table thead th {
+        font-size: 12px;
+    }
+
+    .inner_tab_mainbox {
+        .nav-pills .nav-link {
+            padding: 8px 10px;
+            font-size: 13px;
+        }
+    }
+
+    .tab-arrow.left {
+        left: -5px;
+        top: 0px;
+    }
+
+    .tab-arrow.right {
+        right: -5px;
+        top: 0px;
+    }
+
+    .tab-arrow {
+        width: 37px;
+        height: 37px;
+    }
+
+    .rap_admission_main .rap-acc-btn {
+        font-size: 15px;
+    }
+
+    .gc-modern-section .gc-modern-card p {
+        font-size: 14px;
+    }
+
+    .jc-info h2 {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    .jc-block p {
+        font-size: 13px;
+        margin-bottom: 8px;
+    }
+
+    .jc-block li {
+        font-size: 13px;
+    }
+
+    .jc-block h3 {
+        font-size: 20px;
+    }
+
+    .programme-section {
+        padding: 20px 0px;
+    }
+
+    .programme-main-title {
+        padding: 6px 11px;
+        border-left: 3px solid #A20733;
+        font-size: 18px;
+        text-align: start;
+    }
+
+    .programme-card h3 {
+        font-size: 16px;
+    }
+
+    .programme-card {
+        padding: 20px;
+    }
+
+    .programme-card h4 {
+        font-size: 18px;
+    }
+
+    .semester-box {
+        padding: 10px;
+    }
+
+    .committee-list li {
+        font-size: 13px;
+    }
+
+    .course-header h3 {
+        font-size: 13px;
+    }
+
+    .course-header h3 span {
+        font-size: 17px;
+    }
+
+    .course-info li {
+        font-size: 14px;
+    }
+
+    .course-header i {
+        font-size: 24px;
+    }
+
+    .contact-intro {
+        font-size: 17px;
+    }
+
+    .contact-text {
+        font-size: 14px;
+    }
+
+    .arts-departments .arts-title {
+        font-size: 16px;
+    }
+
+    .arts-departments .arts-list li span {
+        font-size: 13px;
+    }
+
+    .arts-departments .arts-list li a {
+        font-size: 11px;
+    }
+
+    .news-title {
+        font-size: 25px;
+    }
+
+    .news-title::after {
+        width: 65px;
+        height: 3px;
+    }
+
+    .notice-box p {
+        font-size: 15px;
+    }
+
+    .table-news-title {
+        font-size: 17px;
+    }
+
+    .eligibility-wrap .eligibility-title {
+        font-size: 24px;
+    }
+
+
+    .eligibility-wrap .eligibility-item p {
+        font-size: 14px;
+    }
+
+    .eligibility-wrap .eligibility-note {
+        font-size: 14px;
+    }
+
+    .eligibility-wrap .eligibility-item h4 {
+        font-size: 16px;
+    }
+
+    .documents-stepper h3 {
+        font-size: 16px;
+    }
+
+    .doc-item {
+        font-size: 14px;
+    }
+
+    .library-section .library-intro p {
+        font-size: 13px;
+    }
+
+    .library-section .service-list li {
+        font-size: 13px;
+    }
+
+    .aqar-year {
+        font-size: 14px;
+    }
+
+    .iqac-title {
+        font-size: 22px;
+    }
+
+    .iqac-content p {
+        font-size: 14px;
+    }
+
+    .section-header h3 {
+        font-size: 22px;
+    }
+
+    .iqac-card p {
+        font-size: 14px;
+    }
+
+    .board-studies-section .section-title {
+        font-size: 22px;
+    }
+
+    .board-studies-section .department-list li span {
+        font-size: 14px;
+    }
+
+    .infra-section .infra-main-div p {
+        font-size: 13px;
+    }
+
+    .banner-breadcrumb .breadcrumb-item.active {
+        padding: 0px 5px 0 8px;
+    }
+
+    .breadcrumb {
+    align-items: center;
+}
+
+}
+
+
+@media (max-width: 767px) {
+
+    .chairman-modern {
+        padding: 40px 0px;
     }
 
     .main-banner-box .inner_heading {
@@ -3043,8 +3795,8 @@
     }
 
     .chairman-modern .chairman-glass p {
-        font-size: 14px;
         text-align: center;
+        font-size: 14px;
     }
 
     .chairman-modern .profile-info {
@@ -3064,7 +3816,8 @@
         font-size: 22px;
     }
 
-    .modern-title {
+
+    .goals-modern .modern-title {
         font-size: 26px;
     }
 
@@ -3080,24 +3833,16 @@
         font-size: 20px;
     }
 
-    .vm-glass-card p {
-        font-size: 14px;
-    }
-
     .vm-image-box img {
         height: 346px;
     }
 
     .goal-card p {
-        font-size: 13px;
+        font-size: 12px;
     }
 
     .goal-card .goal-icon-img {
         width: 40px;
-    }
-
-    .section-text {
-        font-size: 14px;
     }
 
     .chairman-modern .shape-1 {
@@ -3136,7 +3881,7 @@
     }
 
     .founder-table thead th {
-        font-size: 12px;
+        font-size: 11px;
     }
 
     .goals-modern {
@@ -3154,7 +3899,322 @@
     .inner_tab_mainbox {
         .nav-pills .nav-link {
             padding: 8px 10px;
-            font-size: 14px;
+            font-size: 13px;
+        }
+    }
+
+    .tab-arrow.left {
+        left: -5px;
+        top: 0px;
+    }
+
+    .tab-arrow.right {
+        right: -5px;
+        top: 0px;
+    }
+
+    .tab-arrow {
+        width: 37px;
+        height: 37px;
+    }
+
+    .slider-track img {
+        width: 100%;
+        height: 260px;
+    }
+
+    .gallery-img {
+        height: auto;
+    }
+
+    .rap_admission_main .rap-acc-btn {
+        font-size: 14px;
+    }
+
+    .gc-modern-section {
+        padding: 0 0;
+    }
+
+    .rap_admission_main .rap-acc-btn::after {
+        font-size: 18px;
+    }
+
+    .faq-section h4 {
+        font-size: 13px;
+    }
+
+    .faq-section li {
+        font-size: 13px;
+    }
+
+    .faq-section p {
+        font-size: 13px;
+    }
+
+    .gc-modern-section .gc-modern-card p {
+        font-size: 13px;
+    }
+
+    .jc-info h2 {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    .jc-block p {
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
+
+    .jc-block li {
+        font-size: 14px;
+    }
+
+    .jc-block h3 {
+        font-size: 20px;
+    }
+
+    .programme-section {
+        padding: 20px 0px;
+    }
+
+    .programme-main-title {
+        padding: 6px 11px;
+        border-left: 3px solid #A20733;
+        font-size: 18px;
+        text-align: start;
+    }
+
+    .programme-card h3 {
+        font-size: 16px;
+    }
+
+    .programme-card {
+        padding: 20px;
+    }
+
+    .programme-card h4 {
+        font-size: 18px;
+    }
+
+    .semester-box {
+        padding: 10px;
+    }
+
+    .committee-list li {
+        font-size: 13px;
+    }
+
+    .course-header h3 {
+        font-size: 13px;
+    }
+
+    .course-header h3 span {
+        font-size: 15px;
+    }
+
+    .course-info li {
+        font-size: 13px;
+    }
+
+    .course-header i {
+        font-size: 22px;
+    }
+
+    .contact-intro {
+        font-size: 16px;
+    }
+
+    .contact-text {
+        font-size: 13px;
+    }
+
+    .aqar-year {
+        font-size: 13px;
+    }
+
+    .iqac-title {
+        font-size: 20px;
+    }
+
+    .iqac-content p {
+        font-size: 14px;
+    }
+
+    .iqac-img-box {
+        margin-top: 40px;
+    }
+
+    .section-header h3 {
+        font-size: 20px;
+    }
+
+    .iqac-card p {
+        font-size: 14px;
+    }
+
+    .board-studies-section .section-title {
+        font-size: 20px;
+    }
+
+    .board-studies-section .department-list li span {
+        font-size: 13px;
+    }
+
+}
+
+
+@media (max-width: 576px) {
+    .main-header-classs .logobox img {
+        max-height: 44px;
+    }
+
+    .chairman-modern {
+        padding: 40px 0px;
+    }
+
+    .main-banner-box {
+        padding: 80px 0 20px 0;
+    }
+
+    .main-banner-box .inner_heading {
+        font-size: 19px;
+    }
+
+    .main-banner-box .animated-bg span {
+        width: 100px;
+        height: 100px;
+    }
+
+    .banner-breadcrumb .breadcrumb-item {
+        font-size: 10px;
+    }
+
+    .banner-breadcrumb .breadcrumb-item.active {
+        font-size: 10px;
+    }
+
+    .banner-breadcrumb .breadcrumb-item a {
+        font-size: 10px;
+    }
+
+    .chairman-modern .profile-info h5 {
+        font-size: 17px;
+    }
+
+    .chairman-modern .chairman-txtt {
+        font-size: 13px;
+    }
+
+    .chairman-modern .chairman-glass p {
+        text-align: center;
+        font-size: 13px;
+    }
+
+    .chairman-modern .profile-info {
+        padding: 12px;
+    }
+
+    .chairman-modern .modern-badge {
+        padding: 6px 15px;
+        font-size: 12px;
+    }
+
+    .history-facts {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .vm-glass-card {
+        padding: 28px;
+    }
+
+    .vm-glass-card h3 {
+        font-size: 22px;
+    }
+
+    .goals-modern .modern-title {
+        font-size: 26px;
+    }
+
+    .timeline {
+        padding-left: 30px;
+    }
+
+    .timeline-count {
+        left: -29px;
+    }
+
+    .medium-header {
+        font-size: 18px;
+    }
+
+    .vm-image-box img {
+        height: 346px;
+    }
+
+    .goal-card p {
+        font-size: 13px;
+    }
+
+    .goal-card .goal-icon-img {
+        width: 40px;
+    }
+
+    .chairman-modern .shape-1 {
+        width: 200px;
+        height: 200px;
+    }
+
+    .section-title {
+        font-size: 18px;
+    }
+
+    .college-img-modern {
+        height: auto;
+        margin-bottom: 30px;
+    }
+
+    .text-holder-main {
+        padding: 20px;
+    }
+
+    .about-history-main {
+        padding: 0 0;
+    }
+
+    .info-card {
+        padding: 20px;
+    }
+
+    .college-history-section {
+        padding: 0 0;
+    }
+
+    .founder-table td {
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .founder-table thead th {
+        font-size: 11px;
+    }
+
+    .goals-modern {
+        padding: 40px 0;
+    }
+
+    .infra-section .infra-main-div p {
+        font-size: 14px;
+    }
+
+    .gallery-section {
+        padding: 40px 0px;
+    }
+
+    .inner_tab_mainbox {
+        .nav-pills .nav-link {
+            padding: 6px 8px;
+            font-size: 12px;
         }
     }
 
@@ -3185,127 +4245,284 @@
     .faq-section p {
         font-size: 13px;
     }
-}
 
-
-@media (max-width: 1024px) {
-    .chairman-modern {
-        padding: 45px 0px;
+    .tab-arrow.left {
+        left: -5px;
+        top: 0px;
     }
 
-    .main-banner-box {
-        padding: 25px 0 25px 0;
+    .tab-arrow.right {
+        right: -5px;
+        top: 0px;
     }
 
-    .main-banner-box .inner_heading {
-        font-size: 25px;
+    .tab-arrow {
+        width: 34px;
+        height: 34px;
     }
 
-    .main-banner-box .animated-bg span {
-        width: 120px;
-        height: 120px;
+    .arts-departments .arts-list li span {
+        font-size: 13px;
     }
 
-    .banner-breadcrumb .breadcrumb-item {
-        font-size: 11px;
+    .jc-info h2 {
+        font-size: 18px;
+        margin-bottom: 15px;
     }
 
-    .banner-breadcrumb .breadcrumb-item.active {
-        font-size: 11px;
+    .jc-block p {
+        font-size: 13px;
+        margin-bottom: 8px;
     }
 
-    .chairman-modern .profile-info h5 {
-        font-size: 20px;
+    .jc-block li {
+        font-size: 13px;
     }
 
-    .chairman-modern .chairman-txtt {
-        font-size: 14px;
+    .jc-block h3 {
+        font-size: 18px;
     }
 
-    .chairman-modern .chairman-glass p {
-        font-size: 14px;
-        text-align: center;
+    .programme-section {
+        padding: 20px 0px;
     }
 
-    .chairman-modern .profile-info {
-        padding: 12px;
+    .programme-main-title {
+        padding: 6px 11px;
+        border-left: 3px solid #A20733;
+        font-size: 18px;
+        text-align: start;
     }
 
-    .vm-glass-card {
-        padding: 28px;
+    .programme-card h3 {
+        font-size: 16px;
     }
 
-    .vm-glass-card h3 {
-        font-size: 22px;
-    }
-
-    .modern-title {
-        font-size: 26px;
-    }
-
-    .timeline {
-        padding-left: 30px;
-    }
-
-    .timeline-count {
-        left: -40px;
-    }
-
-    .medium-header {
-        font-size: 20px;
-    }
-
-    .vm-glass-card p {
-        font-size: 14px;
-    }
-
-    .vm-image-box img {
-        height: 346px;
-    }
-
-    .goal-card p {
-        font-size: 14px;
-    }
-
-    .goal-card .goal-icon-img {
-        width: 45px;
-    }
-
-    .section-text {
-        font-size: 14px;
-    }
-
-    .chairman-modern .shape-1 {
-        width: 200px;
-        height: 200px;
-    }
-
-    .section-title {
-        font-size: 22px;
-    }
-
-    .college-img-modern {
-        height: auto;
-        margin-bottom: 30px;
-    }
-
-    .text-holder-main {
-        padding: 30px;
-    }
-
-    .about-history-main {
-        padding: 20px 0;
-    }
-
-    .info-card {
+    .programme-card {
         padding: 20px;
     }
 
-    .college-history-section {
-        padding: 20px 0;
+    .programme-card h4 {
+        font-size: 18px;
     }
 
-}
+    .semester-box {
+        padding: 10px;
+    }
 
+    .arts-departments .arts-title {
+        font-size: 15px;
+    }
+
+    .arts-departments .arts-list li a {
+        font-size: 11px;
+    }
+
+    .committee-list li {
+        font-size: 13px;
+    }
+
+    .course-header h3 {
+        font-size: 13px;
+    }
+
+    .course-header h3 span {
+        font-size: 15px;
+    }
+
+    .course-info li {
+        font-size: 13px;
+    }
+
+    .course-header i {
+        font-size: 22px;
+    }
+
+    .contact-intro {
+        font-size: 16px;
+    }
+
+    .contact-text {
+        font-size: 13px;
+    }
+
+    .arts-departments .arts-list li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .rap_admission_mainbox {
+        padding: 0px 15px 0 0;
+    }
+
+    .news-title {
+        font-size: 22px;
+    }
+
+    .news-title::after {
+        width: 55px;
+        height: 2px;
+    }
+
+    .notice-box p {
+        font-size: 14px;
+    }
+
+    .table-news-title {
+        font-size: 16px;
+    }
+
+    .eligibility-wrap .eligibility-title {
+        font-size: 22px;
+    }
+
+    .eligibility-wrap .eligibility-list {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+    .eligibility-wrap .eligibility-item p {
+        font-size: 13px;
+    }
+
+    .eligibility-wrap .eligibility-note {
+        font-size: 13px;
+    }
+
+    .eligibility-wrap .eligibility-item h4 {
+        font-size: 15px;
+    }
+
+    .documents-stepper h3 {
+        font-size: 14px;
+    }
+
+    .doc-item {
+        font-size: 12px;
+    }
+
+    .library-section .services-grid {
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+
+    .library-section .service-list li {
+        font-size: 12px;
+    }
+
+    .library-section .service-card h4 {
+        font-size: 16px;
+    }
+
+    .library-section .service-card {
+        padding: 15px;
+    }
+
+    .library-section .activity-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .library-section .activity-card h4 {
+        font-size: 15px;
+    }
+
+    .main-grid-library-class {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 2fr));
+    }
+
+    .library-section .section-title {
+        font-size: 16px;
+    }
+
+    .library-section .library-intro p {
+        font-size: 13px;
+    }
+
+    .railway-attractive-section .railway-heading {
+        font-size: 16px;
+    }
+
+    .timeline-item p {
+        font-size: 14px;
+    }
+
+    .board-studies-section .department-list span {
+        font-size: 14px;
+    }
+
+    .concession-note p {
+        font-size: 13px;
+    }
+
+    .board-studies-section .department-columns {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .timeline-title {
+        font-size: 19px;
+    }
+
+    .aqar-year {
+        font-size: 13px;
+    }
+
+    .aqar-section p {
+        font-size: 14px;
+    }
+
+    .iqac-title {
+        font-size: 18px;
+    }
+
+    .iqac-content p {
+        font-size: 13px;
+    }
+
+    .iqac-img-box {
+        margin-top: 40px;
+    }
+
+    .section-header h3 {
+        font-size: 18px;
+    }
+
+    .iqac-card p {
+        font-size: 13px;
+    }
+
+    .iqac-card {
+        padding: 20px;
+    }
+
+    .section-title-table {
+        font-size: 15px;
+        margin-bottom: 10px;
+    }
+
+    .card-header h3 {
+        font-size: 18px;
+    }
+
+    .result-files li {
+        font-size: 13px;
+    }
+
+    .board-studies-section .section-title {
+        font-size: 18px;
+    }
+
+    .board-studies-section .department-list li span {
+        font-size: 13px;
+    }
+
+    .gc-modern-section .gc-modern-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 24px;
+    }
+
+    .board-studies-section .department-columns {
+		gap: 0px;
+	}
+}
 
 /* About us css End */
