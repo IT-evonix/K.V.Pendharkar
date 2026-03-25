@@ -1026,6 +1026,126 @@ img {
     grid-area: stack;
 }
 
+/* New carrer page css start */
+
+.new_career_page_section {
+	padding: 60px 0 0 0;
+}
+
+.new__career_page_mainbox {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.new__career_page_leftbox p {
+	font-size: 18px;
+}
+
+.new__career_page_rightbox img {
+	border-radius: 30px;
+}
+
+.new__career_page_rightbox {
+    filter: drop-shadow(6px 6px 16px #dedede);
+}
+
+.new__career_why_section {
+	margin: 60px 0 0 0;
+}
+
+.new__career_why_listing {
+    position: relative;
+    overflow: hidden;
+    background: #fff;
+    transition: color 0.4s ease;
+	backdrop-filter: blur(14px);
+    border-radius: 26px;
+    padding: 30px;
+    height: 100%;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.new__career_why_listing::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #A20733;
+    transform: scale(0);
+    transform-origin: top left;
+    transition: transform 0.3s ease;
+    z-index: 0;
+}
+
+.new__career_why_listing:hover::before {
+    transform: scale(1);
+}
+
+.new__career_why_listing_mainbox {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+}
+
+.new__career_why_heading {
+    margin: 18px 0 10px 0;
+    font-weight: 600;
+    color: #000000;
+    font-size: 22px;
+}
+
+.new__career_why_logo svg,
+.new__career_why_heading,
+.new__career_why_para p {
+	position: relative;
+	z-index: 9999;
+}
+
+.new__career_why_listing:hover .new__career_why_logo svg {
+	fill: #ffffff;
+	transition-duration: 0.3s;
+}
+.new__career_why_listing:hover .new__career_why_heading {
+    color: #ffffff;
+}
+.new__career_why_listing:hover .new__career_why_para p {
+	color: #ffffff;
+}
+
+.new__career_why_para_secondbox {
+	text-align: center;
+	font-size: 18px;
+}
+
+.new_career_btn_mainbox {
+	display: flex;
+	justify-content: center;
+	gap: 20px;
+}
+
+.new__career_button_section {
+	padding: 60px 0 0 0;
+}
+
+.new__career_google_form_mainbox {
+    padding: 40px;
+    border-radius: 30px;
+    box-shadow: 0px 0px 16px #cccccc63;
+}
+
+.new__career_button_section_inner {
+	padding: 60px 0;
+}
+
+.new_career_btn_listing .apply-btn:focus {
+	color: #ffffff !important;
+} 
+/* New carrer page css ends */
+
 
 @media (max-width: 575px) {
 	.offcanvas__info {
@@ -6739,6 +6859,23 @@ textarea.form-control {
 	.alert-section a {
 		font-size: 13px;
 	}
+
+	.new__career_page_leftbox p {
+		font-size: 16px;
+	}
+
+	.new__career_page_mainbox {
+		gap: 20px;
+	}
+
+	.new__career_why_listing_mainbox {
+		gap: 20px;
+	}
+
+	.new__career_why_heading {
+		font-size: 18px;
+		line-height: normal;
+	}
 }
 
 @media(max-width:768px) {
@@ -6767,6 +6904,19 @@ textarea.form-control {
 
 	.mandal_list {
 		margin-bottom: 30px;
+	}
+
+	.new__career_page_rightbox {
+		grid-column: 1/-1;
+		grid-row: 1/2;
+	}
+
+	.new__career_page_leftbox {
+		grid-column: 1/-1;
+	}
+
+	.new__career_why_listing_mainbox {
+		grid-template-columns: 1fr;
 	}
 }
 
@@ -6871,6 +7021,15 @@ textarea.form-control {
 	.mandal_list-inner {
 		min-height: 250px;
 		max-width: 250px;
+	}
+
+	.new__career_google_form_mainbox {
+		padding: 20px;
+	}
+
+	.new__career_button_section_first_page .apply-btn {
+		padding: 12px 20px;
+		font-size: 14px;
 	}
 
 }

@@ -816,7 +816,59 @@
 
 		<div class="over-menu" id="overlay" onclick="toggleMenu()"></div>
 	</div>
+<script>
 
+        function toggleMenu() {
+            document.getElementById("mobileMenu").classList.toggle("open");
+            document.getElementById("overlay").classList.toggle("active");
+        }
+
+        document.querySelectorAll(".mobile-menu .has-sub > a").forEach(item => {
+            item.addEventListener("click", function (e) {
+
+                let parent = this.parentElement;
+
+                if (parent.querySelector("ul")) {
+                    e.preventDefault();
+                    parent.classList.toggle("open");
+
+                    let submenu = parent.querySelector("ul");
+
+                    if (submenu.style.display === "block") {
+                        submenu.style.display = "none";
+                    } else {
+                        submenu.style.display = "block";
+                    }
+                }
+
+            });
+        });
+
+    </script>
+    <script>
+		document.addEventListener("click", function(e){
+
+		if(e.target.closest(".mobile-menu .has-dropdown > a")){
+		e.preventDefault();
+
+		let link = e.target.closest("a");
+		let parent = link.parentElement;
+		let submenu = parent.querySelector(".submenu");
+		let arrow = link.querySelector(".arrow");
+
+		parent.classList.toggle("open");
+
+		if(submenu.style.display === "block"){
+			submenu.style.display = "none";
+			arrow.textContent = "+";
+		}else{
+			submenu.style.display = "block";
+			arrow.textContent = "-";
+		}
+		}
+
+		});
+	</script>
 </body>
 
 </html>
