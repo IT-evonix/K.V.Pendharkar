@@ -1,0 +1,24 @@
+<IfModule mod_expires.c>
+    ExpiresActive On
+
+    # HTML should not cache heavily
+    ExpiresByType text/html "access plus 0 seconds"
+
+    # Cache static assets
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType application/pdf "access plus 1 month"
+</IfModule>
+
+<IfModule mod_headers.c>
+
+    # HTML always checks latest version
+    <FilesMatch "\.(html|htm)$">
+        Header set Cache-Control "no-cache, must-revalidate"
+    </FilesMatch>
+
+</IfModule>
